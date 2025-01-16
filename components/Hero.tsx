@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import * as React from "react"
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import * as React from 'react';
+import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -10,27 +10,27 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel"
-import { Button } from "@/components/ui/button"
-import Autoplay from "embla-carousel-autoplay"
+} from '@/components/ui/carousel';
+import { Button } from '@/components/ui/button';
+import Autoplay from 'embla-carousel-autoplay';
 
 const banners = [
   {
-    title: 'Dịch vụ Tận nơi',
+    title: 'Dịch vụ tận nơi',
     subtitle: 'Tiện lợi, nhanh chóng, chuyên nghiệp',
     description:
       'Chúng tôi cung cấp dịch vụ cài đặt phần mềm, thay RAM, màn hình, ổ cứng ngay tại nhà hoặc văn phòng của bạn trong TP HCM. Không cần di chuyển!',
     cta: 'Đặt lịch ngay',
   },
   {
-    title: 'Cài đặt Phần mềm',
+    title: 'Cài đặt phần mềm',
     subtitle: 'Làm việc hiệu quả hơn',
     description:
       'Cài đặt Microsoft Office, Google Workspace và các phần mềm văn phòng khác. Hỗ trợ kích hoạt bản quyền.',
     cta: 'Liên hệ ngay',
   },
   {
-    title: 'Cài đặt Phần mềm Tùy chỉnh',
+    title: 'Cài đặt phần mềm tùy chỉnh',
     subtitle: 'Đáp ứng mọi nhu cầu của bạn',
     description:
       'Cài đặt bất kỳ phần mềm nào bạn cần, từ phần mềm làm việc đến giải trí. Hỗ trợ tận tâm.',
@@ -39,24 +39,26 @@ const banners = [
 ];
 
 export default function BannerCarousel() {
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  const [autoplay] = React.useState(() => Autoplay({ delay: 3000, stopOnInteraction: false }))
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [autoplay] = React.useState(() =>
+    Autoplay({ delay: 3000, stopOnInteraction: false })
+  );
 
   React.useEffect(() => {
     if (!api) {
-      return
+      return;
     }
 
-    setCurrent(api.selectedScrollSnap())
+    setCurrent(api.selectedScrollSnap());
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap())
-    })
-  }, [api])
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
-  const handleMouseEnter = React.useCallback(() => autoplay.stop(), [autoplay])
-  const handleMouseLeave = React.useCallback(() => autoplay.play(), [autoplay])
+  const handleMouseEnter = React.useCallback(() => autoplay.stop(), [autoplay]);
+  const handleMouseLeave = React.useCallback(() => autoplay.play(), [autoplay]);
 
   return (
     <Carousel
@@ -85,7 +87,10 @@ export default function BannerCarousel() {
                   <p className="text-sm sm:text-base md:text-lg mb-4 max-w-2xl text-gray-500">
                     {banner.description}
                   </p>
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 hover:bg-blue-700 text-white"
+                  >
                     {banner.cta}
                   </Button>
                 </CardContent>
@@ -108,6 +113,5 @@ export default function BannerCarousel() {
       <CarouselPrevious className="left-4 hidden md:flex" />
       <CarouselNext className="right-4 hidden md:flex" />
     </Carousel>
-  )
+  );
 }
-

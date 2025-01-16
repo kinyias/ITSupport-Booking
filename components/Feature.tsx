@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { Laptop, Shield, Clock, HeadphonesIcon, MapPin } from 'lucide-react';
+import Container from './layout/Container';
 
 const features = [
   {
     name: 'Hỗ trợ tận nơi',
     description:
-      'Dịch vụ tới tận nơi tại nhà hoặc văn phòng của bạn trong TP HCM , chỉ cần 30 phút mặt ngay.',
+      'Dịch vụ tới tận nơi trong TP Hồ Chí Minh, chỉ cần 30 phút có mặt ngay.',
     icon: MapPin,
   },
   {
@@ -32,8 +33,8 @@ const features = [
 export default function Features() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center">
+      <Container>
+      <div className="text-center">
           <h2 className="text-3xl font-extrabold sm:text-4xl">
             Tại sao lại chọn chúng tôi?
           </h2>
@@ -72,7 +73,7 @@ export default function Features() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -21,7 +21,7 @@ export default function ServicesCard({ service }: any) {
         </CardHeader>
         <CardContent className="mt-auto">
           <Button variant="outline" className="w-full mt-4">
-            Learn More
+            Xem thêm
           </Button>
         </CardContent>
       </Card>

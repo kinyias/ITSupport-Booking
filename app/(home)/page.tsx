@@ -1,6 +1,7 @@
 import CTA from "@/components/cta";
 import Features from "@/components/Feature";
 import Hero from "@/components/Hero";
+import NewsList from "@/components/news/NewsList";
 import ProductsList from "@/components/products/ProductsList";
 import ServicesList from "@/components/services/ServicesList";
 
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <Features/>
       <ServicesList/>
+      <NewsList/>
       <CTA/>
     </>
   );

@@ -16,6 +16,11 @@ import {
   Headphones,
   Server,
   Smartphone,
+  Settings,
+  Wrench,
+  Printer,
+  Cctv,
+  DatabaseBackup,
 } from 'lucide-react';
 import ServicesCard from './ServicesCard';
 import Container from '../layout/Container';
@@ -24,44 +29,44 @@ const services = [
   {
     title: 'Sửa chữa & nâng cấp',
     description:
-      'Thay RAM, thay màn hình, thay ổ cứng và nhiều dịch vụ khác. Mang lại hiệu suất tối ưu cho thiết bị của bạn.',
+      'Thay RAM, thay màn hình, thay ổ cứng, sửa chữa máy tính và nhiều dịch vụ khác. Mang lại hiệu suất tối ưu cho thiết bị của bạn.',
     icon: Laptop,
   },
   {
-    title: 'Cài đặt Phần mềm',
+    title: 'Cài đặt phần mềm',
     description:
-      '"Cài đặt mọi loại phần mềm từ cơ bản đến nâng cao. Hỗ trợ tận tình, đảm bảo hoạt động ổn định.',
-    icon: Headphones,
+      'Cài đặt mọi loại phần mềm từ cơ bản đến nâng cao. Hỗ trợ tận tình, đảm bảo hoạt động ổn định.',
+    icon: Settings,
   },
   {
     title: 'Sửa chữa máy in',
     description:
       'Máy in bị lỗi, kẹt giấy, in mờ? Chúng tôi cung cấp dịch vụ sửa chữa chuyên nghiệp, nhanh chóng và hiệu quả.',
-    icon: Shield,
+    icon: Wrench,
   },
   {
     title: 'Nạp Mực Máy in',
     description:
       'Nạp mực máy in chất lượng cao, giá rẻ. Đảm bảo bản in sắc nét, không lem mực, không làm hỏng máy.',
-    icon: Cloud,
+    icon: Printer,
   },
   {
-    title: 'Lắp đặt Camera Giám sát',
+    title: 'Lắp đặt Camera giám sát',
     description:
       'Lắp đặt hệ thống camera giám sát chất lượng cao, giúp bạn theo dõi và bảo vệ ngôi nhà hoặc doanh nghiệp của mình 24/7.',
-    icon: Server,
+    icon: Cctv,
   },
   {
-    title: 'Khôi phục Dữ liệu',
+    title: 'Khôi phục dữ liệu',
     description:
       'Khôi phục dữ liệu bị mất do xóa nhầm, hỏng ổ cứng, virus tấn công hoặc các sự cố khác. Cam kết tỷ lệ thành công cao.',
-    icon: Smartphone,
+    icon: DatabaseBackup,
   },
 ];
 
 export default function Services() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section className="px-4 sm:px-6 lg:px-8">
       <Container>
         <div className="text-center">
           <motion.h2

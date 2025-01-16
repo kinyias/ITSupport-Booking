@@ -20,24 +20,7 @@ const services = [
   { title: "Remote Support", href: "/services/remote-support" },
   { title: "On-Site Support", href: "/services/on-site-support" },
 ]
-const navItems = [
-  {
-    title: 'Trang chủ',
-    href: '/',
-  },
-  {
-    title: 'Khách sạn',
-    href: '/hotel',
-  },
-  {
-    title: 'Về chúng tôi',
-    href: '/about',
-  },
-  {
-    title: 'Tin tức',
-    href: '/news',
-  },
-];
+
 export default function Header() {
   return (
     <header className="bg-secondary shadow-sm sticky top-0 border border-b-primary/10 z-50">
