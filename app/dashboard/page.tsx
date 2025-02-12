@@ -152,11 +152,8 @@ export default function DashboardPage() {
           <CardTitle>Danh sách lịch hẹn gần đây</CardTitle>
         </CardHeader>
         <CardContent>
-        <div className="w-full">
-        <ScrollArea className="w-full rounded-md border">
+        <div className="w-full overflow-auto">
           <BookingsTable bookings={recentBookings} />
-          <ScrollBar orientation="horizontal" />
-          </ScrollArea>
           </div>
         </CardContent>
       </Card>

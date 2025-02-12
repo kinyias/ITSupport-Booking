@@ -9,21 +9,21 @@ import {
 import { Badge } from '../ui/badge';
 export default function BookingsTable({ bookings }: { bookings: any }) {
   return (
-    <Table>
+    <Table className="min-w-[300px]">
       <TableHeader>
         <TableRow>
-          <TableHead>Người yêu cầu</TableHead>
-          <TableHead>Vấn đề</TableHead>
-          <TableHead>Trạng thái</TableHead>
-          <TableHead>Ưu tiên</TableHead>
-          <TableHead>Ngày đặt</TableHead>
+        <TableHead>Người yêu cầu</TableHead>
+            <TableHead className="hidden md:table-cell">Vấn đề</TableHead>
+            <TableHead >Trạng thái</TableHead>
+            <TableHead className="hidden md:table-cell">Ưu tiên</TableHead>
+            <TableHead >Ngày đặt</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {bookings.map((booking: any) => (
           <TableRow key={booking.id}>
             <TableCell>{booking.requester}</TableCell>
-            <TableCell>{booking.issue}</TableCell>
+            <TableCell className="hidden md:table-cell">{booking.issue}</TableCell>
             <TableCell>
               <Badge
                 variant={
@@ -37,7 +37,7 @@ export default function BookingsTable({ bookings }: { bookings: any }) {
                 {booking.status}
               </Badge>
             </TableCell>
-            <TableCell>
+            <TableCell className="hidden md:table-cell">
               <Badge
                 variant={
                   booking.priority === 'high'

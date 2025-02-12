@@ -8,6 +8,7 @@ import Sidebar from '@/components/layout/dashboard/Sidebar';
 import Container from '@/components/layout/Container';
 import { useState } from 'react';
 import ChatPopup from '@/components/chat/chat-popup';
+import { AuthProvider } from '@/context/auth-provider';
 
 export default function DashboardLayout({
   children,
@@ -15,9 +16,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  console.log(isSidebarOpen);
   return (
     <div className="min-h-screen bg-background">
+      <AuthProvider>
       {/* Header */}
       <Header onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)} />
       <div className="flex">
@@ -34,6 +35,7 @@ export default function DashboardLayout({
         </main>
         <ChatPopup/>
       </div>
+      </AuthProvider>
     </div>
   );
 }

@@ -4,17 +4,20 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { Bot, Calendar, Gauge, MessageCircle, Settings } from 'lucide-react';
+import { Bot, Calendar, Gauge, KeyRound, LogOut, MessageCircle, Settings } from 'lucide-react';
+import LogoutDialog from '@/components/account/LogoutDialog';
 
 const menuItems = [
-  { name: 'Dashboard', href: '/dashboard', icon: Gauge },
-  { name: 'Bookings', href: '/dashboard/bookings', icon: Calendar },
-  { name: 'Services', href: '/dashboard/services', icon: Bot },
+  { name: 'Tổng quan', href: '/dashboard', icon: Gauge },
+  { name: 'Quản lý lịch hẹn', href: '/dashboard/bookings', icon: Calendar },
+  { name: 'Quản lý dịch vụ', href: '/dashboard/services', icon: Bot },
+  { name: 'Quản lý đăng nhập', href: '/dashboard/session', icon: KeyRound },
   { name: 'Chat', href: '/dashboard/chat', icon: MessageCircle },
-  { name: 'Settings', href: '/dashboard/settings', icon: Settings },
+  { name: 'Cài đặt', href: '/dashboard/settings', icon: Settings },
 ];
 
 export default function Sidebar({ isSidebarOpen }: { isSidebarOpen: boolean }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <aside
       className={cn(
@@ -35,7 +38,16 @@ export default function Sidebar({ isSidebarOpen }: { isSidebarOpen: boolean }) {
           </Button>
           </Link>
         ))}
+        <Button
+            onClick={()=>setIsOpen(true)}
+            variant="ghost"
+            className="w-full justify-start"
+          >
+            <LogOut/>
+            Đăng xuất
+          </Button>
       </nav>
+      <LogoutDialog isOpen={isOpen} setIsOpen={setIsOpen}/>
     </aside>
   );
 }
